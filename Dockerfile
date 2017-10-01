@@ -17,9 +17,8 @@ RUN chown -R opam:opam /opam
 RUN passwd -l opam
 RUN su - opam -c 'opam init -y && opam switch 4.03.0'
 RUN su - opam -c 'opam install -y mirage mirage-xen'
-
-ADD .bashrc /opam
 VOLUME $WORKSPACE
 WORKDIR $WORKSPACE
-SHELL ["/bin/bash", "-l", "-c"]
+ADD exec.sh /opam
+ENTRYPOINT ["/opam/exec.sh"]
 USER opam:opam
