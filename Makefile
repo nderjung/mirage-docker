@@ -1,5 +1,5 @@
 CONTAINER_NAME=a1exanderjung/mirage-toolchain
-CONTAINER_VERSION=0.1.1
+CONTAINER_VERSION=0.1.2
 
 .PHONY: build clean
 
